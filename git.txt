@@ -16,3 +16,9 @@ git push
 git branch ---- nos dice en qué rama estamos
 git checkout -b [nombre rama] ------ creamos nueva rama
 git checkout [nombre rama] ------ nos metemos a la rama
+
+transaccion:
+atómica - cambios bien definidos
+consistentes - ejectando transacciones en orden llegas al mismo estado 
+isolated - las transacciones se pueden ejecutar de forma aislada
+persistente - dura a través del tiempo

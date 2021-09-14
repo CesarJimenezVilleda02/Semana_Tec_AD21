@@ -12,7 +12,7 @@ git push: Sirve para que las transacciones locales se empujen o manden al reposi
 Cada vez que hago cambios en mi código, al terminar debemos ejecutar:
 git add -agit commit -m "mensaje descriptivo de los cambios"
 git push
-
+---------------------RAMAS---------------------------
 git branch ---- nos dice en qué rama estamos
 git checkout -b [nombre rama] ------ creamos nueva rama
-git checkout [nombre rama] ------ nos metemos a la rama
+git checkout [nombre rama] ------ nos metemos a la rama o cambiamos de rama

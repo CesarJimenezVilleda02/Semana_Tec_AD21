@@ -99,3 +99,20 @@ def verificarAlrededor(row, column):
 
 def verificarAlrededor():
     return 0
+
+
+print("Este es su tablero")
+while True:
+    for i in display:
+        for j in i:
+            print(j, end=" ")
+        print("\n")
+    fila = int(input("Ingrese la fila: "))
+    columna = int(input("Ingrese la columna: "))
+    if respuestas[fila-1][columna-1] == "X":
+        break
+    else:
+        verificar = verificarAlrededor(fila-1, columna-1)
+        display[fila-1].insert(columna-1, verificar)
+        display[fila-1].pop(columna)
+print("Te has equivocado, había una mina, lastima")

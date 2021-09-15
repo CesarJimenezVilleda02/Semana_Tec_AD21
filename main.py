@@ -27,3 +27,13 @@ def colocarminas():
 
 def verificarAlrededor():
     return 0
+
+
+print("Este es su tablero")
+while True:
+    for i in display:
+        for j in i:
+            print(j, end=" ")
+        print("\n")
+    fila = int(input("Ingrese la fila: "))
+    columna = int(input("Ingrese la columna: "))

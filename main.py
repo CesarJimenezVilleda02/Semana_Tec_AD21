@@ -14,7 +14,7 @@ def crearTablero(filas, columnas):
     for i in range(0, filas):
         tablero.append([])
         for j in range(0, columnas):
-            tablero[i].append("*")
+            tablero[i].append(" * ")
     return tablero
 
 
@@ -109,6 +109,9 @@ while True:
     for i in display:
         for j in i:
             print(j, end=" ")
+        print("\n")
+        for j in i:
+            print('_', end='___')
         print("\n")
     fila = int(input("Ingrese la fila: "))
     columna = int(input("Ingrese la columna: "))

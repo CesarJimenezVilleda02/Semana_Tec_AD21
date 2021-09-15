@@ -17,7 +17,6 @@ def crearTablero(filas, columnas):
             tablero[i].append("*")
     return 0
 
-<<<<<<< HEAD
 def colocarminas(numMinas):
     respuestas = crearTablero(filas, columnas)
     for i in range(0, numMinas):
@@ -96,14 +95,6 @@ def verificarAlrededor(row, column):
                         n += 1
     return n
 
-=======
-
-display = crearTablero(filas, columnas)
-
-
-def colocarminas():
-    return 0
->>>>>>> tablero
 
 
 def verificarAlrededor():

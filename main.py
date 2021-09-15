@@ -17,7 +17,7 @@ def colocarminas(numMinas):
             respuestas[posy].insert(posx, "X")
             respuestas[posy].pop(posx+1)
     return respuestas 
-"jijo mano"
+
 
 def verificarAlrededor():
     return 0

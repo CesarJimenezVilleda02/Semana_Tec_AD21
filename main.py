@@ -8,11 +8,19 @@ filas = int(input("Ingrese el número de filas que desea en su tablero "))
 columnas = int(input("Ingrese el número de columnas que desea en su tablero "))
 numminas = int(input("Ingrese el número de minas que desea en su tablero "))
 
+
 def crearTablero(filas, columnas):
+    tablero = []
+    for i in range(0, filas):
+        tablero.append([])
+        for j in range(0, columnas):
+            tablero[i].append("*")
     return 0
+
 
 def colocarminas():
     return 0
+
 
 def verificarAlrededor():
     return 0

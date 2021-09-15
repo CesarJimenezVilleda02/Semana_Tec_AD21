@@ -18,6 +18,9 @@ def crearTablero(filas, columnas):
     return 0
 
 
+display = crearTablero(filas, columnas)
+
+
 def colocarminas():
     return 0
 

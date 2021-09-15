@@ -37,3 +37,10 @@ while True:
         print("\n")
     fila = int(input("Ingrese la fila: "))
     columna = int(input("Ingrese la columna: "))
+    if respuestas[fila-1][columna-1] == "X":
+        break
+    else:
+        verificar = verificarAlrededor(fila-1, columna-1)
+        display[fila-1].insert(columna-1, verificar)
+        display[fila-1].pop(columna)
+print("Te has equivocado, había una mina, lastima")

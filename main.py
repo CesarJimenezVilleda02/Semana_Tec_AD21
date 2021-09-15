@@ -1,5 +1,5 @@
 "Ariann Fernando Arriaga Alcántara A01703556"
-"Pablo Cesar Jiménez Villeda"
+"Pablo Cesar Jiménez Villeda A01703517"
 "Proyecto Semana_TEC AD2021"
 import random
 
@@ -15,11 +15,15 @@ def crearTablero(filas, columnas):
         tablero.append([])
         for j in range(0, columnas):
             tablero[i].append("*")
-    return 0
+    return tablero
 
-def colocarminas(numMinas):
+
+display = crearTablero(filas, columnas)
+
+
+def colocarminas():
     respuestas = crearTablero(filas, columnas)
-    for i in range(0, numMinas):
+    for i in range(0, numminas):
         posx = random.randint(0, columnas-1)
         posy = random.randint(0, filas-1)
         while respuestas[posy][posx] == "X":
@@ -28,7 +32,11 @@ def colocarminas(numMinas):
         else:
             respuestas[posy].insert(posx, "X")
             respuestas[posy].pop(posx+1)
-    return respuestas 
+    return respuestas
+
+
+respuestas = colocarminas()
+
 
 def verificarAlrededor(row, column):
     n = 0
@@ -94,11 +102,6 @@ def verificarAlrededor(row, column):
                     if respuestas[i][j] == "X":
                         n += 1
     return n
-
-
-
-def verificarAlrededor():
-    return 0
 
 
 print("Este es su tablero")

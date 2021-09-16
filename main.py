@@ -6,6 +6,17 @@ from threading import Thread
 from playsound import playsound
 import webbrowser
 
+
+# Función para abrir archivo de música
+def Fun_mus():
+    playsound('Como_te_atreves.mp3')
+    
+
+# Definir función que llama audio
+music = Thread(target=Fun_mus)
+music.daemon = True
+# Iniciar musica
+music.start()
 print("Bienvenido al buscaminas ")
 # Inicializacion del estado inicial
 filas = int(input("Ingrese el número de filas que desea en su tablero "))

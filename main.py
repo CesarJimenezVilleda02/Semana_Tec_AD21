@@ -4,7 +4,7 @@
 import random
 from threading import Thread
 from playsound import playsound
-from webbrowser import webbrowser
+import webbrowser
 
 print("Bienvenido al buscaminas ")
 # Inicializacion del estado inicial
@@ -128,10 +128,12 @@ while True:
     # Pierde
     if respuestas[fila-1][columna-1] == "X":
         print("Te has equivocado, había una mina. \nObtuviste un puntaje de: ", score)
+        webbrowser.open('https://www.youtube.com/watch?v=UzdLXlDAHGc', new=1, autoraise=True)
         break
     # Gana
     elif rondas == rondasParaGanar:
          print("Felicidades haz ganado el juego: \nObtuviste un puntaje de: ", score)
+         webbrowser.open('https://www.youtube.com/watch?v=KXw8CRapg7k', new=1, autoraise=True)
          break
     # Sigue jugando
     else:

@@ -43,4 +43,4 @@ while True:
         verificar = verificarAlrededor(fila-1, columna-1)
         display[fila-1].insert(columna-1, verificar)
         display[fila-1].pop(columna)
-print("Te has equivocado, había una mina, lastima")
+print("Te has equivocado, había una mina,lastima")

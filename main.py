@@ -2,11 +2,18 @@
 "Pablo Cesar Jiménez Villeda A01703517"
 "Proyecto Semana_TEC AD2021"
 import random
+from threading import Thread
+from playsound import playsound
+from webbrowser import webbrowser
 
 print("Bienvenido al buscaminas ")
+# Inicializacion del estado inicial
 filas = int(input("Ingrese el número de filas que desea en su tablero "))
 columnas = int(input("Ingrese el número de columnas que desea en su tablero "))
 numminas = int(input("Ingrese el número de minas que desea en su tablero "))
+score = 0
+rondas = 0
+rondasParaGanar = (filas * columnas) - numminas 
 
 
 def crearTablero(filas, columnas):
@@ -106,6 +113,8 @@ def verificarAlrededor(row, column):
 
 print("Este es su tablero")
 while True:
+    # Mostrar el tablero y el puntaje
+    print("Tu puntuaje actual es de: ", score, "\n")
     for i in display:
         for j in i:
             print(j, end=" ")
@@ -113,12 +122,24 @@ while True:
         for j in i:
             print('_', end='___')
         print("\n")
+    # Usuario ingresa nueva locación
     fila = int(input("Ingrese la fila: "))
     columna = int(input("Ingrese la columna: "))
+    # Pierde
     if respuestas[fila-1][columna-1] == "X":
+        print("Te has equivocado, había una mina. \nObtuviste un puntaje de: ", score)
+        webbrowser.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', new=1, autoraise=True)
         break
+    # Gana
+    elif rondas == rondasParaGanar:
+         print("Felicidades haz ganado el juego: \nObtuviste un puntaje de: ", score)
+         webbrowser.open('https://www.youtube.com/watch?v=KXw8CRapg7k', new=1, autoraise=True)
+         break
+    # Sigue jugando
     else:
         verificar = verificarAlrededor(fila-1, columna-1)
-        display[fila-1].insert(columna-1, verificar)
+        display[fila-1].insert(columna-1, " " + str(verificar) + " ")
         display[fila-1].pop(columna)
-print("Te has equivocado, había una mina, lastima")
+        score += verificar
+        rondas += 1
+

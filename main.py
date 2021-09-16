@@ -1,16 +1,17 @@
-"Ariann Fernando Arriaga Alcántara A01703556"
-"Pablo Cesar Jiménez Villeda A01703517"
-"Proyecto Semana_TEC AD2021"
 import random
 from threading import Thread
 from playsound import playsound
 import webbrowser
 
+"Ariann Fernando Arriaga Alcántara A01703556"
+"Pablo Cesar Jiménez Villeda A01703517"
+"Proyecto Semana_TEC AD2021"
+
 
 # Función para abrir archivo de música de fondo
 def Fun_mus():
     playsound('Como_te_atreves.mp3')
-    
+
 
 # Definir función que llama audio
 music = Thread(target=Fun_mus)
@@ -24,7 +25,7 @@ columnas = int(input("Ingrese el número de columnas que desea en su tablero "))
 numminas = int(input("Ingrese el número de minas que desea en su tablero "))
 score = 0
 rondas = 1
-rondasParaGanar = (filas * columnas) - numminas 
+rondasParaGanar = (filas * columnas) - numminas
 
 
 def crearTablero(filas, columnas):
@@ -138,16 +139,22 @@ while True:
     columna = int(input("Ingrese la columna: "))
     # Pierde
     if respuestas[fila-1][columna-1] == "X":
-        print("Te has equivocado, había una mina. \nObtuviste un puntaje de: ", score)
-        webbrowser.open('https://www.youtube.com/watch?v=UzdLXlDAHGc', new=1, autoraise=True)
+        print("Te has equivocado, había una mina. \n")
+        print("Obtuviste una puntuación de: ", score)
+        webbrowser.open('https://www.youtube.com/watch?v=UzdLXlDAHGc',
+                        new=1,
+                        autoraise=True)
         playsound('game_over.mp3')
         break
     # Gana
     elif rondas == rondasParaGanar:
-         print("Felicidades haz ganado el juego: \nObtuviste un puntaje de: ", score)
-         playsound('victory.mp3')
-         webbrowser.open('https://www.youtube.com/watch?v=KXw8CRapg7k', new=1, autoraise=True)
-         break
+        print("Felicidades haz ganado el juego: \n")
+        print("Obtuviste una puntuación de: ", score)
+        playsound('victory.mp3')
+        webbrowser.open('https://www.youtube.com/watch?v=KXw8CRapg7k',
+                        new=1,
+                        autoraise=True)
+        break
     # Sigue jugando
     else:
         verificar = verificarAlrededor(fila-1, columna-1)
@@ -155,4 +162,3 @@ while True:
         display[fila-1].pop(columna)
         score += verificar
         rondas += 1
-

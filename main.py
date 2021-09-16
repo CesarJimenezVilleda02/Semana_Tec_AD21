@@ -12,7 +12,7 @@ filas = int(input("Ingrese el número de filas que desea en su tablero "))
 columnas = int(input("Ingrese el número de columnas que desea en su tablero "))
 numminas = int(input("Ingrese el número de minas que desea en su tablero "))
 score = 0
-rondas = 0
+rondas = 1
 rondasParaGanar = (filas * columnas) - numminas 
 
 

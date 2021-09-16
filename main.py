@@ -7,7 +7,7 @@ from playsound import playsound
 import webbrowser
 
 
-# Función para abrir archivo de música
+# Función para abrir archivo de música de fondo
 def Fun_mus():
     playsound('Como_te_atreves.mp3')
     
@@ -140,10 +140,12 @@ while True:
     if respuestas[fila-1][columna-1] == "X":
         print("Te has equivocado, había una mina. \nObtuviste un puntaje de: ", score)
         webbrowser.open('https://www.youtube.com/watch?v=UzdLXlDAHGc', new=1, autoraise=True)
+        playsound('game_over.mp3')
         break
     # Gana
     elif rondas == rondasParaGanar:
          print("Felicidades haz ganado el juego: \nObtuviste un puntaje de: ", score)
+         playsound('victory.mp3')
          webbrowser.open('https://www.youtube.com/watch?v=KXw8CRapg7k', new=1, autoraise=True)
          break
     # Sigue jugando

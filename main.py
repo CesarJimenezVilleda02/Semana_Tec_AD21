@@ -148,6 +148,8 @@ while True:
         break
     # Gana
     elif rondas == rondasParaGanar:
+        verificar = verificarAlrededor(fila-1, columna-1)
+        score += verificar
         print("Felicidades haz ganado el juego: \n")
         print("Obtuviste una puntuación de: ", score)
         playsound('victory.mp3')

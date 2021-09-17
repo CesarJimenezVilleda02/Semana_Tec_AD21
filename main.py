@@ -81,7 +81,7 @@ def verificarAlrededor(row, column):
                     if respuestas[i][j] == "X":
                         n += 1
     # Casos de arriba
-    elif (row == 10):
+    elif (row == 0):
         # Centro
         if (column > 0) and (column < (len(respuestas)-1)):
             for i in range(row, row+2):
